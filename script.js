@@ -7,8 +7,7 @@ const wasteData = [
     icon: "🥤",
     treatment:
       "Kosongkan isi botol, bilas jika perlu, keringkan, lalu pisahkan dari sampah basah.",
-    tip:
-      "Botol plastik yang bersih lebih mudah diterima untuk didaur ulang atau disetor ke bank sampah."
+    tip: "Botol plastik yang bersih lebih mudah diterima untuk didaur ulang atau disetor ke bank sampah.",
   },
   {
     name: "Kardus",
@@ -18,8 +17,7 @@ const wasteData = [
     icon: "📦",
     treatment:
       "Lipat kardus agar tidak memakan tempat. Pastikan kardus dalam keadaan kering.",
-    tip:
-      "Jangan mencampur kardus dengan sisa makanan atau sampah basah."
+    tip: "Jangan mencampur kardus dengan sisa makanan atau sampah basah.",
   },
   {
     name: "Kertas HVS",
@@ -29,8 +27,7 @@ const wasteData = [
     icon: "📄",
     treatment:
       "Kumpulkan kertas dalam kondisi kering dan pisahkan dari sampah basah.",
-    tip:
-      "Gunakan kedua sisi kertas sebelum membuangnya."
+    tip: "Gunakan kedua sisi kertas sebelum membuangnya.",
   },
   {
     name: "Kulit Pisang",
@@ -38,10 +35,8 @@ const wasteData = [
     category: "Organik",
     binColor: "Hijau",
     icon: "🍌",
-    treatment:
-      "Masukkan ke tempat sampah organik atau olah menjadi kompos.",
-    tip:
-      "Sampah organik sebaiknya dipisahkan agar tidak mengotori sampah daur ulang."
+    treatment: "Masukkan ke tempat sampah organik atau olah menjadi kompos.",
+    tip: "Sampah organik sebaiknya dipisahkan agar tidak mengotori sampah daur ulang.",
   },
   {
     name: "Sisa Nasi",
@@ -51,8 +46,7 @@ const wasteData = [
     icon: "🍚",
     treatment:
       "Masukkan ke tempat sampah organik. Jika memungkinkan, olah menjadi kompos.",
-    tip:
-      "Ambil makanan secukupnya untuk mengurangi sampah makanan."
+    tip: "Ambil makanan secukupnya untuk mengurangi sampah makanan.",
   },
   {
     name: "Baterai",
@@ -62,8 +56,7 @@ const wasteData = [
     icon: "🔋",
     treatment:
       "Jangan dicampur dengan sampah biasa. Simpan terpisah dan serahkan ke tempat pengumpulan limbah B3.",
-    tip:
-      "Baterai mengandung bahan berbahaya, sehingga perlu ditangani secara khusus."
+    tip: "Baterai mengandung bahan berbahaya, sehingga perlu ditangani secara khusus.",
   },
   {
     name: "Lampu Bekas",
@@ -73,8 +66,7 @@ const wasteData = [
     icon: "💡",
     treatment:
       "Bungkus dengan aman agar tidak pecah, lalu serahkan ke fasilitas pengumpulan limbah khusus.",
-    tip:
-      "Jangan memecahkan lampu bekas karena beberapa jenis lampu dapat mengandung zat berbahaya."
+    tip: "Jangan memecahkan lampu bekas karena beberapa jenis lampu dapat mengandung zat berbahaya.",
   },
   {
     name: "Tisu Kotor",
@@ -84,8 +76,7 @@ const wasteData = [
     icon: "🧻",
     treatment:
       "Buang ke tempat sampah residu karena sudah terkontaminasi dan sulit didaur ulang.",
-    tip:
-      "Gunakan lap kain jika memungkinkan untuk mengurangi penggunaan tisu sekali pakai."
+    tip: "Gunakan lap kain jika memungkinkan untuk mengurangi penggunaan tisu sekali pakai.",
   },
   {
     name: "Charger Rusak",
@@ -95,8 +86,7 @@ const wasteData = [
     icon: "🔌",
     treatment:
       "Jangan dibuang bersama sampah biasa. Kumpulkan dan serahkan ke tempat pengelolaan e-waste.",
-    tip:
-      "Sampah elektronik perlu dipisahkan karena memiliki komponen yang tidak aman jika dibuang sembarangan."
+    tip: "Sampah elektronik perlu dipisahkan karena memiliki komponen yang tidak aman jika dibuang sembarangan.",
   },
   {
     name: "Kaleng Minuman",
@@ -104,20 +94,16 @@ const wasteData = [
     category: "Logam",
     binColor: "Kuning",
     icon: "🥫",
-    treatment:
-      "Bilas kaleng, keringkan, lalu pisahkan dari sampah basah.",
-    tip:
-      "Kaleng bersih lebih mudah diproses ulang atau dijual ke pengepul."
-  }
+    treatment: "Bilas kaleng, keringkan, lalu pisahkan dari sampah basah.",
+    tip: "Kaleng bersih lebih mudah diproses ulang atau dijual ke pengepul.",
+  },
 ];
-
 
 /* ================= MENGAMBIL ELEMEN HTML ================= */
 
 const searchInput = document.getElementById("searchInput");
 const searchBtn = document.getElementById("searchBtn");
 const resultArea = document.getElementById("resultArea");
-
 
 /* ================= FUNGSI PENCARIAN SAMPAH ================= */
 
@@ -134,9 +120,11 @@ function searchWaste() {
   }
 
   const foundWaste = wasteData.find((item) => {
-    return item.keywords.some((word) => word.includes(keyword)) ||
-           item.name.toLowerCase().includes(keyword) ||
-           item.category.toLowerCase().includes(keyword);
+    return (
+      item.keywords.some((word) => word.includes(keyword)) ||
+      item.name.toLowerCase().includes(keyword) ||
+      item.category.toLowerCase().includes(keyword)
+    );
   });
 
   if (!foundWaste) {
@@ -184,7 +172,6 @@ function searchWaste() {
   `;
 }
 
-
 /* ================= EVENT PENCARIAN ================= */
 
 searchBtn.addEventListener("click", searchWaste);
@@ -195,7 +182,6 @@ searchInput.addEventListener("keydown", function (event) {
   }
 });
 
-
 /* ================= MENU RESPONSIVE (HAMBURGER) ================= */
 
 const menuToggle = document.getElementById("menuToggle");
@@ -205,7 +191,6 @@ menuToggle.addEventListener("click", function () {
   menuToggle.classList.toggle("active");
   navMenu.classList.toggle("active");
 });
-
 
 /* ================= SMOOTH SCROLL NAVBAR ================= */
 
@@ -224,12 +209,11 @@ navLinks.forEach(function (link) {
 
     if (targetSection) {
       targetSection.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   });
 });
-
 
 /* ================= ECO-QUIZ LOGIC ================= */
 
@@ -237,28 +221,35 @@ const quizData = [
   {
     question: "Manakah di bawah ini yang termasuk sampah organik?",
     options: ["Botol Plastik", "Kulit Pisang", "Baterai", "Kardus"],
-    answer: 1
+    answer: 1,
   },
   {
     question: "Tempat sampah berwarna merah digunakan untuk kategori apa?",
     options: ["Organik", "Kertas", "B3 (Bahan Berbahaya)", "Residu"],
-    answer: 2
+    answer: 2,
   },
   {
-    question: "Kardus bekas kemasan paket sebaiknya dibuang ke tempat sampah warna?",
+    question:
+      "Kardus bekas kemasan paket sebaiknya dibuang ke tempat sampah warna?",
     options: ["Hijau", "Kuning", "Biru", "Abu-abu"],
-    answer: 2
+    answer: 2,
   },
   {
-    question: "Sampah manakah yang sulit didaur ulang dan masuk kategori residu?",
+    question:
+      "Sampah manakah yang sulit didaur ulang dan masuk kategori residu?",
     options: ["Majalah", "Tisu Kotor", "Kaleng Soda", "Gelas Kaca"],
-    answer: 1
+    answer: 1,
   },
   {
     question: "Apa yang harus dilakukan sebelum membuang botol plastik?",
-    options: ["Langsung dibuang", "Diisi air penuh", "Dikosongkan dan diringkas", "Dibakar"],
-    answer: 2
-  }
+    options: [
+      "Langsung dibuang",
+      "Diisi air penuh",
+      "Dikosongkan dan diringkas",
+      "Dibakar",
+    ],
+    answer: 2,
+  },
 ];
 
 const iconCorrect = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
@@ -277,7 +268,7 @@ const resultMessageEl = document.getElementById("resultMessage");
 
 function loadQuestion() {
   const currentQuiz = quizData[currentQuestionIndex];
-  
+
   quizProgressEl.innerText = `Pertanyaan ${currentQuestionIndex + 1} dari ${quizData.length}`;
   quizQuestionEl.innerText = currentQuiz.question;
   quizOptionsEl.innerHTML = "";
@@ -300,8 +291,8 @@ function checkAnswer(selectedIndex) {
   const correctIndex = quizData[currentQuestionIndex].answer;
   const options = quizOptionsEl.querySelectorAll(".option-btn");
 
-  // Disable all buttons after choice
-  options.forEach(btn => btn.disabled = true);
+  // Disable tombol setelah memilih
+  options.forEach((btn) => (btn.disabled = true));
 
   if (selectedIndex === correctIndex) {
     score++;
@@ -314,7 +305,7 @@ function checkAnswer(selectedIndex) {
     options[correctIndex].innerHTML += iconCorrect;
   }
 
-  // Next question after short delay
+  // Pertanyaan selanjutnya setelah delay sebentar
   setTimeout(() => {
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length) {
@@ -328,15 +319,18 @@ function checkAnswer(selectedIndex) {
 function showResult() {
   quizContentEl.classList.add("hidden");
   quizResultEl.classList.remove("hidden");
-  
+
   resultScoreEl.innerText = `Skor kamu: ${score} / ${quizData.length}`;
-  
+
   if (score === quizData.length) {
-    resultMessageEl.innerText = "Luar biasa! Kamu adalah Master Pemilah Sampah!";
+    resultMessageEl.innerText =
+      "Luar biasa! Kamu adalah Master Pemilah Sampah!";
   } else if (score >= 3) {
-    resultMessageEl.innerText = "Bagus! Kamu sudah cukup paham cara memilah sampah.";
+    resultMessageEl.innerText =
+      "Bagus! Kamu sudah cukup paham cara memilah sampah.";
   } else {
-    resultMessageEl.innerText = "Jangan menyerah! Ayo baca lagi panduan di atas dan coba lagi.";
+    resultMessageEl.innerText =
+      "Jangan menyerah! Ayo baca lagi panduan di atas dan coba lagi.";
   }
 }
 
@@ -348,9 +342,8 @@ function resetQuiz() {
   loadQuestion();
 }
 
-// Start quiz on load
+// Mulai quiz saat memuat
 loadQuestion();
-
 
 /* ================= REPORT FORM LOGIC ================= */
 
@@ -367,7 +360,7 @@ if (reportForm) {
 
     // Scroll ke atas card agar notifikasi terlihat jelas
     document.getElementById("report").scrollIntoView({
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 }
@@ -378,22 +371,23 @@ function resetReportForm() {
   reportSuccess.classList.add("hidden");
 }
 
-
 /* ================= SCROLL REVEAL ANIMATION ================= */
 
 const revealElements = document.querySelectorAll(".reveal");
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-      // Optional: stop observing after reveal
-      // revealObserver.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.15 // Trigger when 15% of the element is visible
-});
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  },
+);
 
 revealElements.forEach((el) => {
   revealObserver.observe(el);

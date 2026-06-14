@@ -637,8 +637,9 @@ textarea {
 }
 
 .category-card:hover {
+  transform: translateY(-8px);
   border: 2px solid var(--green-dark);
-  box-shadow: none;
+  box-shadow: 0 20px 50px rgba(23, 63, 47, 0.15);
 }
 
 .category-card.green {

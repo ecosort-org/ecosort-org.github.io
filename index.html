@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>EcoSort - Pilah Sampah Jadi Mudah</title>
+
+  <!-- File CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <a href="#home" class="logo">EcoSort</a>
+
+    <nav class="nav-menu">
+      <a href="#home">Beranda</a>
+      <a href="#search">Cari Sampah</a>
+      <a href="#category">Kategori</a>
+      <a href="#report">Lapor</a>
+    </nav>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <span class="label">Smart Waste Sorting</span>
+
+      <h1>Pilah sampah jadi lebih mudah.</h1>
+
+      <p>
+        EcoSort membantumu mencocokkan jenis sampah dan mengetahui
+        kategori tempat sampah yang sesuai secara sederhana.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#search" class="btn primary">Mulai Cari</a>
+        <a href="#category" class="btn secondary">Lihat Kategori</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <!-- 
+        Keterangan gambar:
+        Bagian ini bisa diganti dengan foto/ilustrasi tempat sampah,
+        orang memilah sampah, atau mockup website EcoSort.
+      -->
+      <div class="photo-placeholder">
+        <span>♻️</span>
+        <h3>EcoSort</h3>
+        <p>Panduan pilah sampah dari rumah</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SEARCH SECTION ================= -->
+  <section class="section" id="search">
+    <div class="section-heading">
+      <span class="label">Cari Sampah</span>
+      <h2>Cocokkan jenis sampahmu.</h2>
+      <p>
+        Ketik jenis sampah apa yang ingin anda cari kategorinya.
+      </p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Contoh: botol plastik, baterai, kardus..."
+      />
+
+      <button id="searchBtn">Cari</button>
+    </div>
+
+    <!-- Hasil pencarian muncul di sini -->
+    <div class="result-area" id="resultArea">
+      <div class="empty-result">
+        Hasil kategori sampah akan muncul setelah kamu melakukan pencarian.
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CATEGORY SECTION ================= -->
+  <section class="section soft" id="category">
+    <div class="section-heading">
+      <span class="label">Kategori Sampah</span>
+      <h2>Kenali warna dan jenisnya.</h2>
+      <p>
+        Panduan dasar untuk lebih mengenali keseluruhan kategori sampah.
+      </p>
+    </div>
+
+    <div class="category-grid">
+      <div class="category-card green">
+        <h3>Organik</h3>
+        <p>Sisa makanan, daun, kulit buah, dan bahan alami.</p>
+        <small>Tempat sampah hijau</small>
+      </div>
+
+      <div class="category-card yellow">
+        <h3>Plastik</h3>
+        <p>Botol plastik, gelas plastik, sedotan, dan kemasan.</p>
+        <small>Tempat sampah kuning</small>
+      </div>
+
+      <div class="category-card blue">
+        <h3>Kertas</h3>
+        <p>Kardus, kertas HVS, koran, dan buku bekas.</p>
+        <small>Tempat sampah biru</small>
+      </div>
+
+      <div class="category-card red">
+        <h3>B3</h3>
+        <p>Baterai, lampu bekas, obat kedaluwarsa, dan limbah berbahaya.</p>
+        <small>Tempat sampah merah</small>
+      </div>
+
+      <div class="category-card grey">
+        <h3>Residu</h3>
+        <p>Tisu kotor, popok, puntung rokok, dan sampah sulit didaur ulang.</p>
+        <small>Tempat sampah abu-abu</small>
+      </div>
+
+      <div class="category-card purple">
+        <h3>Elektronik</h3>
+        <p>Charger rusak, kabel, headset, mouse, dan perangkat elektronik.</p>
+        <small>E-waste</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REPORT FORM UI ================= -->
+  <section class="section soft" id="report">
+    <div class="report-layout">
+      <div>
+        <span class="label">Lapor Sampah</span>
+        <h2>Temukan tumpukan sampah?</h2>
+        <p>
+          Isi form tersebut jika terdapat tumpukan sampah di sekiat anda!
+        </p>
+      </div>
+
+      <form class="report-form">
+        <input type="text" placeholder="Nama pelapor" />
+        <input type="text" placeholder="Lokasi sampah" />
+
+        <select>
+          <option value="">Pilih jenis sampah</option>
+          <option>Organik</option>
+          <option>Plastik</option>
+          <option>Kertas</option>
+          <option>B3</option>
+          <option>Residu</option>
+          <option>Elektronik</option>
+          <option>Campuran</option>
+        </select>
+
+        <textarea placeholder="Deskripsikan masalah sampah secara singkat"></textarea>
+
+        <button type="button" class="btn primary full">
+          Kirim Laporan
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div>
+      <h2>EcoSort</h2>
+      <p>
+        Website edukasi sederhana untuk membantu pengguna mengenali,
+        mencocokkan, dan memilah sampah berdasarkan kategorinya.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Beranda</a>
+      <a href="#search">Cari Sampah</a>
+      <a href="#category">Kategori</a>
+      <a href="#report">Lapor</a>
+    </div>
+
+    <p class="copyright">
+      © 2026 EcoSort. Web Design Project.
+    </p>
+  </footer>
+
+  <!-- File JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
